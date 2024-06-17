@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Location</title>
+		<link rel="stylesheet" href="/Styles/location.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+	</head>
+	<body>
+		<header class="nav">
+			<nav>
+				<ul class="nav-link">
+					<li><a href="/Main/personal.html">Personal</a></li>
+					<li><a href="/Main/recipe.html">Recipe</a></li>
+					<li><a href="/Main/gallery.html">Gallery</a></li>
+					<li><a href="/Main/location.html">Location</a></li>
+					<li><a href="/Main/contact.html">Contact</a></li>
+				</ul>
+			</nav>
+			<div class="search">
+				<input
+					type="text search"
+					class="search-input"
+					placeholder="Search..." />
+				<button class="search-btn search">
+					<i class="fas fa-search"></i>
+				</button>
+			</div>
+		</header>
+		<section class="locate">
+			<h1>Миний байршил</h1>
+			<h2>Газарзүйн координатууд</h2>
+			<p>Өргөрөг: <span id="latitude">Байршил олох дээр дарна уу</span></p>
+			<p>Уртраг: <span id="longitude">Байршил олох дээр дарна уу</span></p>
+		</section>
+		<button id="getLocationButton" class="ripple">Байршил олох</button>
+	</body>
+	<script src="/Script/location.js"></script>
+</html>

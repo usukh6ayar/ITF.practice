@@ -1,0 +1,346 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+html {
+	scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+body {
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	right: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	background-color: #24252a;
+	width: 100%;
+	z-index: 1;
+}
+
+header.active {
+	background-color: #afc8ad;
+	color: #000;
+}
+
+header.active nav ul li a {
+	color: #000;
+}
+
+.nav-link li a {
+	font-weight: 500;
+	font-size: 16px;
+	color: #edf0f1;
+	text-decoration: none;
+	font-family: "Montserrat", sans-serif;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 17px 100px;
+	width: 100%;
+}
+
+.nav-link {
+	list-style: none;
+}
+
+.nav-link li {
+	display: inline-block;
+	padding: 0 20px;
+}
+
+.nav-link li a {
+	transition: all 0.3s ease 0s;
+}
+
+.nav-link li a:hover {
+	color: #0088a9;
+}
+
+.nav-link li a:active {
+	color: #006882;
+}
+
+.search {
+	position: relative;
+	height: 50px;
+}
+
+.search .search-input {
+	background-color: #fff;
+	border: 0;
+	font-size: 16px;
+	padding: 15px;
+	height: 20px;
+	width: 20px;
+	transition: width 0.3s ease;
+}
+
+.search-btn {
+	background-color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 50px;
+	width: 50px;
+}
+
+.search-btn:focus,
+input:focus {
+	outline: none;
+}
+
+.search.active .search-input {
+	width: 200px;
+}
+.search.active .search-btn {
+	transform: translateX(-53px);
+}
+
+/* RECIPE */
+
+section {
+	margin: 50px 108px;
+	font-family: "Inter", sans-serif;
+	font-weight: 200;
+}
+
+h1 {
+	font-size: 28px;
+}
+
+.in-link {
+	background-color: #5f6f52;
+	text-align: center;
+	padding: 8px 0;
+	justify-content: space-evenly;
+	display: flex;
+	cursor: pointer;
+}
+
+.in-link a {
+	text-decoration: none;
+	color: #ecf4d6;
+	font-size: 19px;
+	text-transform: uppercase;
+}
+
+.in-link a:hover {
+	opacity: 0.5;
+}
+#food {
+	margin-top: 120px;
+}
+
+#orts,
+#hachir,
+#tutorial {
+	margin: 40px 108px;
+}
+
+li {
+	font-size: 17px;
+}
+
+table td {
+	padding: 3px 20px;
+}
+
+/* FEEDBACK */
+.panel-container {
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	border-radius: 4px;
+	font-size: 1.2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 30px;
+	max-width: 500px;
+}
+
+.panel-container strong {
+	list-style: 20px;
+}
+
+.rating-container {
+	display: flex;
+	margin: 20px 0;
+	gap: 5px;
+}
+
+.rating {
+	flex: 1;
+	cursor: pointer;
+	padding: 20px;
+	margin: 10px 5px;
+}
+
+.rating:hover,
+.rating:active {
+	border-radius: 4px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.rating img {
+	width: 40px;
+}
+
+.rating small {
+	font-size: 1.1rem;
+	color: #555;
+	display: block;
+	margin: 10px 0 0;
+}
+
+.rating:hover small,
+.rating:active small {
+	color: #111;
+}
+
+.btn {
+	background-color: #302d2b;
+	color: #fff;
+	border: 0;
+	font-size: 1.2rem;
+	border-radius: 4px;
+	padding: 12px 30px;
+	cursor: pointer;
+}
+
+.btn:focus {
+	outline: none;
+}
+
+.btn:active {
+	transform: scale(0.98);
+}
+
+.fa-heart {
+	color: red;
+	font-size: 30px;
+	margin-bottom: 10px;
+}
+
+/* TOP TOP BUTTON */
+.to-top {
+	background: orange;
+	position: fixed;
+	bottom: 16px;
+	right: 32px;
+	width: 75px;
+	height: 75px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 32px;
+	color: #1f1f1f;
+	text-decoration: none;
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.4s;
+}
+
+.to-top.active {
+	bottom: 32px;
+	pointer-events: auto;
+	opacity: 1;
+}
+
+/* EDAMAM API */
+.header {
+	background-color: #c0c0c0;
+	color: #333;
+	padding: 1em;
+	text-align: center;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+main {
+	max-width: 800px;
+	margin: 20px auto;
+	padding: 20px;
+	background-color: white;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#recipes {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	gap: 20px;
+}
+
+.recipe-card {
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	overflow: hidden;
+	transition: transform 0.3s;
+	cursor: pointer;
+}
+
+.recipe-card:hover {
+	transform: scale(1.05);
+}
+
+.recipe-card img {
+	width: 100%;
+	height: 150px;
+	object-fit: cover;
+}
+
+.recipe-card-info {
+	padding: 10px;
+}
+
+h3 {
+	margin: 0;
+	font-size: 17px;
+}
+
+#searchForm {
+	float: right;
+}
+
+input[type="text"] {
+	border: solid 3px #fff;
+	box-sizing: border-box;
+	font-size: 17px;
+	height: 50px;
+	outline: solid #fc0 0;
+	padding: 0.5em;
+	z-index: 1;
+	border-radius: 10px;
+}
+
+input[type="text"]:focus {
+	border: solid 3px #09f;
+}
+
+button {
+	padding: 8px 16px;
+	font-size: 15px;
+	border-radius: 5px;
+}
+
+p {
+	margin: 0;
+	color: #666;
+}

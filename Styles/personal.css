@@ -1,0 +1,193 @@
+/* NAVBAR */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+html {
+	scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+body {
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
+	height: 200vh;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	right: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	background-color: #24252a;
+	width: 100%;
+	z-index: 1;
+}
+
+header.active {
+	background-color: #afc8ad;
+	color: #000;
+}
+
+header.active nav ul li a {
+	color: #000;
+}
+
+.nav-link li a {
+	font-weight: 500;
+	font-size: 16px;
+	color: #edf0f1;
+	text-decoration: none;
+	font-family: "Montserrat", sans-serif;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 17px 100px;
+	width: 100%;
+}
+
+.nav-link {
+	list-style: none;
+}
+
+.nav-link li {
+	display: inline-block;
+	padding: 0 20px;
+}
+
+.nav-link li a {
+	transition: all 0.3s ease 0s;
+}
+
+.nav-link li a:hover {
+	color: #0088a9;
+}
+
+.nav-link li a:active {
+	color: #006882;
+}
+
+.search {
+	position: relative;
+	height: 50px;
+}
+
+.search .search-input {
+	background-color: #fff;
+	border: 0;
+	font-size: 16px;
+	padding: 15px;
+	height: 20px;
+	width: 20px;
+	transition: width 0.3s ease;
+}
+
+.search-btn {
+	background-color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 50px;
+	width: 50px;
+}
+
+.search-btn:focus,
+input:focus {
+	outline: none;
+}
+
+.search.active .search-input {
+	width: 200px;
+}
+.search.active .search-btn {
+	transform: translateX(-53px);
+}
+
+/* CAROUSEL INTRO CONTAINER*/
+#container {
+	display: flex;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	gap: 200px;
+}
+
+/* CAROUSEL */
+.carousel {
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+	height: 530px;
+	width: 500px;
+	overflow: hidden;
+	display: inline-block;
+	margin-top: 150px;
+}
+
+.crsl {
+	width: 500px;
+	height: 500px;
+	object-fit: cover;
+}
+
+.crsl-image-container {
+	display: flex;
+	transform: translateX(0);
+	transition: transform 0.5s ease-in-out;
+}
+
+.crsl-buttons-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.crsl-btn {
+	background-color: #c78933;
+	color: #fff;
+	border: none;
+	padding: 0.5rem;
+	cursor: pointer;
+	width: 49.5%;
+}
+
+/* PORTFOLIO */
+
+.intro {
+	font-family: "Roboto", sans-serif;
+	font-size: 1.2rem;
+	display: inline-block;
+}
+
+hr {
+	border: 1px solid white;
+}
+
+/* BG LOADING */
+.bg {
+	background: url("https://images.unsplash.com/photo-1536257104079-aa99c6460a5a?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+		no-repeat center center/cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: calc(100vw + 60px);
+	height: calc(100vh + 60px);
+	z-index: -1;
+	filter: blur(0px);
+}
+
+.loading-text {
+	margin-top: 30px;
+	font-size: 250px;
+	color: #fff;
+}

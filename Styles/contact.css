@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+html {
+	scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+body {
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
+	height: 200vh;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	right: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	background-color: #24252a;
+	width: 100%;
+	z-index: 1;
+}
+
+header.active {
+	background-color: #afc8ad;
+	color: #000;
+}
+
+header.active nav ul li a {
+	color: #000;
+}
+
+.nav-link li a {
+	font-weight: 500;
+	font-size: 16px;
+	color: #edf0f1;
+	text-decoration: none;
+	font-family: "Montserrat", sans-serif;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 17px 100px;
+	width: 100%;
+}
+
+.nav-link {
+	list-style: none;
+}
+
+.nav-link li {
+	display: inline-block;
+	padding: 0 20px;
+}
+
+.nav-link li a {
+	transition: all 0.3s ease 0s;
+}
+
+.nav-link li a:hover {
+	color: #0088a9;
+}
+
+.nav-link li a:active {
+	color: #006882;
+}
+
+.search {
+	position: relative;
+	height: 50px;
+}
+
+.search .search-input {
+	background-color: #fff;
+	border: 0;
+	font-size: 16px;
+	padding: 15px;
+	height: 20px;
+	width: 20px;
+	transition: width 0.3s ease;
+}
+
+.search-btn {
+	background-color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 50px;
+	width: 50px;
+}
+
+.search-btn:focus,
+input:focus {
+	outline: none;
+}
+
+.search.active .search-input {
+	width: 200px;
+}
+.search.active .search-btn {
+	transform: translateX(-53px);
+}
+
+/* CONTACT */
+.contact {
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	overflow: hidden;
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+}
+
+.container {
+	background-color: rgba(0, 0, 0, 0.2);
+	padding: 20px 40px;
+	border-radius: 20px;
+	width: 800px;
+}
+
+.container h1 {
+	text-align: center;
+	margin-bottom: 15px;
+	font-size: 3rem;
+}
+
+.ripple {
+	background-color: #5299d3;
+	color: #fff;
+	border: 1px #2d2d2d solid;
+	border-radius: 20px;
+	font-size: 1rem;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	padding: 30px 40px;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+.ripple:focus {
+	outline: none;
+}
+
+.ripple:active {
+	transform: scale(0.98);
+}
+
+.ripple .circle {
+	position: absolute;
+	background-color: #fff;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	transform: translate(-50%, 50% scale(0));
+	animation: scale 0.5s ease-out;
+}
+
+@keyframes scale {
+	to {
+		transform: translate(-50%, -50%) scale(3);
+		opacity: 0;
+	}
+}
+
+.text {
+	margin-top: 0;
+	margin-bottom: 35px;
+	text-align: center;
+}
+
+.form-control {
+	position: relative;
+	margin: 20px 0 40px;
+	width: 100%;
+	color: #faf6f0;
+}
+
+.form-control input {
+	background-color: transparent;
+	border: 0;
+	border-bottom: 1px solid #fff;
+	display: block;
+	width: 100%;
+	padding: 15px 0;
+	font-size: 18px;
+	color: #fff5e0;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+	outline: 0;
+	border-bottom-color: #fff;
+}
+
+.form-control label {
+	position: absolute;
+	top: 15px;
+	left: 0;
+	pointer-events: none;
+}
+
+.form-control label span {
+	display: inline-block;
+	font-size: 18px;
+	min-width: 5px;
+	transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+	color: #fff;
+	transform: translateY(-30px);
+}
+
+.form-control input::placeholder {
+	opacity: 0;
+}
+
+.form-control input:focus::placeholder {
+	opacity: 1;
+}
+/* PASSWORD BLUR */
+.background {
+	background: url(https://images.unsplash.com/photo-1530053969600-caed2596d242?q=80&w=3474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+		no-repeat center center/cover;
+	position: absolute;
+	top: -20px;
+	bottom: -20px;
+	left: -20px;
+	right: -20px;
+	z-index: -1;
+	filter: blur(20px);
+}

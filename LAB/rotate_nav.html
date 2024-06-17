@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Rotating Navigation</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+			integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+			crossorigin="anonymous" />
+	</head>
+	<style>
+		body {
+			background-color: #333;
+			color: #222;
+			overflow: hidden;
+			margin: 0;
+		}
+
+		.container {
+			background-color: #fafafa;
+			transform-origin: top left;
+			width: 100vw;
+			min-height: 100vh;
+			padding: 50px;
+			transition: transform 0.5s linear;
+		}
+
+		.container.show-nav {
+			transform: rotate(-20deg);
+		}
+
+		.circle-container {
+			position: fixed;
+			top: -100px;
+			left: -100px;
+		}
+
+		.circle {
+			background-color: #ff7979;
+			height: 200px;
+			width: 200px;
+			border: 50%;
+			position: relative;
+			transition: transform 0.5s linear;
+		}
+
+		.container.show-nav .circle {
+			transform: rotate(-70deg);
+		}
+
+		.circle button {
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			height: 100px;
+			background: transparent;
+			border: 0;
+			font-size: 26px;
+			color: white;
+		}
+
+		.circle button:focus {
+			outline: none;
+		}
+
+		.circle button#open {
+			left: 60%;
+		}
+
+		.circle button#close {
+			top: 60%;
+			transform: rotate(90deg);
+			transform-origin: top left;
+		}
+
+		.container.show-nav + nav li {
+			transform: translateX(0);
+			transform-style: 0.3s;
+		}
+
+		nav {
+			position: fixed;
+			bottom: 40px;
+			left: 0;
+			z-index: 100;
+		}
+
+		nav ul {
+			list-style-type: none;
+			padding-left: 30px;
+		}
+
+		nav ul li {
+			text-transform: uppercase;
+			color: white;
+			margin: 40px 0;
+			transform: translateX(-100%);
+			transition: transform 0.4s ease-in;
+		}
+
+		nav ul li i {
+			font-size: 20px;
+			margin-right: 10px;
+		}
+
+		nav ul li + li {
+			margin-left: 15px;
+			transform: translateX(-150%);
+		}
+
+		nav a {
+			color: #fafafa;
+			text-decoration: none;
+			transition: all 0.5s;
+		}
+
+		nav a:hover {
+			color: #ff7979;
+			font-weight: bold;
+		}
+
+		.content img {
+			max-width: 100%;
+			max-height: 500px;
+		}
+
+		.content {
+			max-width: 1000px;
+			margin: 50px auto;
+		}
+
+		.content h1 {
+			margin: 0;
+		}
+
+		.content small {
+			color: #555;
+			font-style: italic;
+		}
+
+		.content p {
+			color: #333;
+			line-height: 1.5;
+		}
+	</style>
+
+	<body>
+		<div class="container">
+			<div class="circle-container">
+				<div class="circle">
+					<button id="close" class="fas fa-times"></button>
+					<button id="open" class="fas fa-bars"></button>
+				</div>
+			</div>
+
+			<div class="content">
+				<h1>Amazing Article</h1>
+				<small>Floring pop</small>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore vitae
+					eos sint perferendis amet pariatur illum animi optio aliquid
+					cupiditate?Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+					Sit voluptate dolorem itaque saepe unde eveniet aliquam quis
+					consequatur, recusandae cumque numquam soluta accusamus deserunt
+					consequuntur, commodi assumenda animi reiciendis tempora?
+				</p>
+				<h3>My Dog</h3>
+				<img
+					src="https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+					alt="dog" />
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio rerum
+					et molestias reprehenderit. Nobis asperiores labore officia
+					assumenda?Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					Distinctio voluptates sapiente doloremque, aliquid dolores quae cum
+					odio autem non porro.
+				</p>
+			</div>
+		</div>
+		<nav>
+			<ul>
+				<li>
+					<i class="fas fa-home">Home</i>
+				</li>
+				<li>
+					<i class="fas fa-user-alt"><a href="#">About</a></i>
+				</li>
+				<li>
+					<i class="fas fa-envelope"><a href="#">Contact us</a></i>
+				</li>
+			</ul>
+		</nav>
+	</body>
+	<script>
+		const open = document.getElementById("open");
+		const close = document.getElementById("close");
+		const container = document.querySelector(".container");
+
+		open.addEventListener("click", () => container.classList.add("show-nav"));
+		close.addEventListener("click", () =>
+			container.classList.remove("show-nav")
+		);
+	</script>
+</html>

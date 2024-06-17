@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vertical BG slider</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+			integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+			crossorigin="anonymous" />
+	</head>
+	<style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			height: 100vh;
+		}
+
+		.slider-container {
+			position: relative;
+			overflow: hidden;
+			width: 100vw;
+			height: 100vh;
+		}
+
+		.left-slider {
+			height: 100%;
+			width: 35%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			transition: transform 0.5s ease-in-out;
+		}
+
+		.left-slider > div {
+			height: 100%;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			color: #fff;
+		}
+
+		.left-slider h1 {
+			font-size: 40px;
+			margin-bottom: 10px;
+			margin-top: -30px;
+		}
+
+		.right-slider {
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 35%;
+			width: 65%;
+			transition: transform 0.5s ease-in-out;
+		}
+
+		.right-slider > div {
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center center;
+			height: 100%;
+			width: 100%;
+		}
+
+		button {
+			background-color: #fff;
+			border: none;
+			color: #aaa;
+			cursor: pointer;
+			font-size: 16px;
+			padding: 15px;
+		}
+
+		button:hover {
+			color: #222;
+		}
+
+		button:focus {
+			outline: none;
+		}
+
+		.slider-container .action-buttons button {
+			position: absolute;
+			left: 35%;
+			top: 50%;
+			z-index: 100;
+		}
+
+		.slider-container .action-buttons .down-button {
+			transform: translateX(-100%);
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
+		}
+
+		.slider-container .action-buttons .up-button {
+			transform: translateY(-100%);
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px;
+		}
+	</style>
+
+	<body>
+		<div class="slider-container">
+			<div class="left-slider">
+				<!-- first -->
+				<div style="background-color: #252233">
+					<h1>Flying Eagle</h1>
+					<p>in the Sunset</p>
+				</div>
+				<!-- second -->
+				<div style="background-color: #ff8866">
+					<h1>Lonely Castle</h1>
+					<p>in the wilderness</p>
+				</div>
+				<!-- third -->
+				<div style="background-color: #2a86ba">
+					<h1>Blue Sky</h1>
+					<p>with its mountains</p>
+				</div>
+				<!-- fourth -->
+				<div style="background-color: #fd3555">
+					<h1>Nature Flower</h1>
+					<p>all in pink</p>
+				</div>
+			</div>
+
+			<div class="right-slider">
+				<div
+					style="
+						background-image: url(https://images.unsplash.com/photo-1487139975590-b4f1dce9b035?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3388&q=80);
+					"></div>
+				<div
+					style="
+						background-image: url(https://images.unsplash.com/photo-1521313197574-27f7ef4a3be4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3096&q=80);
+					"></div>
+				<div
+					style="
+						background-image: url(https://images.unsplash.com/photo-1518709268805-4e9042af9f23?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3384&q=80);
+					"></div>
+				<div
+					style="
+						background-image: url(https://images.unsplash.com/photo-1515865644861-8bedc4fb8344?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2743&q=80);
+					"></div>
+			</div>
+			<div class="action-buttons">
+				<button class="down-button">
+					<i class="fas fa-arrow-down"></i>
+				</button>
+				<button class="up-button">
+					<i class="fas fa-arrow-up"></i>
+				</button>
+			</div>
+		</div>
+
+		<script>
+			const sliderContainer = document.querySelector(".slider-container");
+			const slideRight = document.querySelector(".right-slider");
+			const slideLeft = document.querySelector(".left-slider");
+			const upButton = document.querySelector(".up-button");
+			const downButton = document.querySelector(".down-button");
+			const slidesLength = slideRight.querySelectorAll("div").length;
+			let activeSlideIndex = 0;
+
+			slideLeft.style.top = `-${(slidesLength - 1) * 100}vh`;
+
+			const changeSlide = (direction) => {
+				const sliderHeight = sliderContainer.clientHeight;
+				if (direction === "up") {
+					activeSlideIndex--;
+					if (activeSlideIndex < 0) {
+						activeSlideIndex = slidesLength - 1;
+					}
+				} else if (direction === "down") {
+					activeSlideIndex++;
+					if (activeSlideIndex > slidesLength - 1) {
+						activeSlideIndex = 0;
+					}
+				}
+
+				slideRight.style.transform = `translateY(-${
+					activeSlideIndex * sliderHeight
+				}px)`;
+				slideLeft.style.transform = `translateY(${
+					activeSlideIndex * sliderHeight
+				}px)`;
+			};
+
+			// Function to handle keyboard arrow key presses
+			const handleArrowKey = (event) => {
+				if (event.key === "ArrowUp") {
+					changeSlide("up");
+				} else if (event.key === "ArrowDown") {
+					changeSlide("down");
+				}
+			};
+
+			// Add event listeners for the arrow keys
+			document.addEventListener("keydown", handleArrowKey);
+
+			// Add event listeners for the buttons
+			upButton.addEventListener("click", () => changeSlide("up"));
+			downButton.addEventListener("click", () => changeSlide("down"));
+		</script>
+	</body>
+</html>

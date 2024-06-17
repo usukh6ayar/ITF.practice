@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Contact</title>
+		<link rel="stylesheet" href="/Styles/contact.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+	</head>
+	<body>
+		<header class="nav">
+			<nav>
+				<ul class="nav-link">
+					<li><a href="/Main/personal.html">Personal</a></li>
+					<li><a href="/Main/recipe.html">Recipe</a></li>
+					<li><a href="/Main/gallery.html">Gallery</a></li>
+					<li><a href="/Main/location.html">Location</a></li>
+					<li><a href="/Main/contact.html">Contact</a></li>
+				</ul>
+			</nav>
+			<div class="search">
+				<input
+					type="text search"
+					class="search-input"
+					placeholder="Search..." />
+				<button class="search-btn search">
+					<i class="fas fa-search"></i>
+				</button>
+			</div>
+		</header>
+		<section class="contact">
+			<div class="background" id="background"></div>
+			<div class="container">
+				<h1>Надтай холбогдох</h1>
+				<p class="text">Танд удахгүй хариу илгээх болно</p>
+				<form>
+					<div class="form-control">
+						<input type="text" required />
+						<label>Name</label>
+					</div>
+					<br />
+					<div class="form-control">
+						<input type="email" required />
+						<label>Email</label>
+					</div>
+					<br />
+					<!-- BLUR ANIMATION -->
+					<div class="form-control">
+						<input
+							type="text"
+							id="message"
+							placeholder="10-с дээш тэмдэгт ашиглах"
+							required />
+						<label>Message</label>
+					</div>
+					<button class="ripple">Илгээх</button>
+				</form>
+			</div>
+		</section>
+	</body>
+	<script src="/Script/contact.js"></script>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Gallery</title>
+		<link rel="stylesheet" href="/Styles/gallery.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+	</head>
+	<body>
+		<header class="nav">
+			<nav>
+				<ul class="nav-link">
+					<li><a href="/Main/personal.html">Personal</a></li>
+					<li><a href="/Main/recipe.html">Recipe</a></li>
+					<li><a href="/Main/gallery.html">Gallery</a></li>
+					<li><a href="/Main/location.html">Location</a></li>
+					<li><a href="/Main/contact.html">Contact</a></li>
+				</ul>
+			</nav>
+			<div class="search">
+				<input
+					type="text search"
+					class="search-input"
+					placeholder="Search..." />
+				<button class="search-btn search">
+					<i class="fas fa-search"></i>
+				</button>
+			</div>
+		</header>
+
+		<section id="art">
+			<h3 class="like-h3">
+				Double click on the image to <i class="fas fa-heart"></i> it
+			</h3>
+			<small class="like-text"
+				>You liked it
+				<span id="times" style="font-weight: bold">0</span> times</small
+			>
+			<div class="slider-container loveme">
+				<div
+					class="slide active"
+					style="
+						background-image: url(https://images.unsplash.com/photo-1628164304740-dfef5f3a9c39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3270&q=80);
+					"></div>
+				<div
+					class="slide"
+					style="
+						background-image: url(https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3270&q=80);
+					"></div>
+				<div
+					class="slide"
+					style="
+						background-image: url(https://images.unsplash.com/photo-1611416457332-946853cc75d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3371&q=80);
+					"></div>
+				<div
+					class="slide"
+					style="
+						background-image: url(https://images.unsplash.com/photo-1611323340350-bdcc0e6cfae5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3270&q=80);
+					"></div>
+				<div
+					class="slide"
+					style="
+						background-image: url(https://images.unsplash.com/photo-1451347050272-fab73c74d90d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3271&q=80);
+					"></div>
+				<div
+					class="slide"
+					style="
+						background-image: url(https://images.unsplash.com/photo-1628164304740-dfef5f3a9c39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3270&q=80);
+					"></div>
+			</div>
+			<button class="arrow left-arrow" id="left">
+				<i class="fa fa-arrow-left"></i>
+			</button>
+			<button class="arrow right-arrow" id="right">
+				<i class="fa fa-arrow-right"></i>
+			</button>
+		</section>
+	</body>
+	<script src="/Script/gallery.js"></script>
+</html>

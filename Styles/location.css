@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+html {
+	scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+body {
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
+	height: 200vh;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	right: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	background-color: #24252a;
+	width: 100%;
+	z-index: 1;
+}
+
+header.active {
+	background-color: #afc8ad;
+	color: #000;
+}
+
+header.active nav ul li a {
+	color: #000;
+}
+
+.nav-link li a {
+	font-weight: 500;
+	font-size: 16px;
+	color: #edf0f1;
+	text-decoration: none;
+	font-family: "Montserrat", sans-serif;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 17px 100px;
+	width: 100%;
+}
+
+.nav-link {
+	list-style: none;
+}
+
+.nav-link li {
+	display: inline-block;
+	padding: 0 20px;
+}
+
+.nav-link li a {
+	transition: all 0.3s ease 0s;
+}
+
+.nav-link li a:hover {
+	color: #0088a9;
+}
+
+.nav-link li a:active {
+	color: #006882;
+}
+
+.search {
+	position: relative;
+	height: 50px;
+}
+
+.search .search-input {
+	background-color: #fff;
+	border: 0;
+	font-size: 16px;
+	padding: 15px;
+	height: 20px;
+	width: 20px;
+	transition: width 0.3s ease;
+}
+
+.search-btn {
+	background-color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 50px;
+	width: 50px;
+}
+
+.search-btn:focus,
+input:focus {
+	outline: none;
+}
+
+.search.active .search-input {
+	width: 200px;
+}
+.search.active .search-btn {
+	transform: translateX(-53px);
+}
+
+/* LOCATION */
+.locate {
+	margin-top: 80px;
+	margin-left: 120px;
+	font-size: 1.4rem;
+}
+.ripple {
+	background-color: #2d2d2d;
+	color: #fff;
+	border: 1px #2d2d2d solid;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	padding: 30px 40px;
+	overflow: hidden;
+	margin: 10px 0;
+	position: relative;
+	margin-left: 120px;
+}
+
+.ripple:focus {
+	outline: none;
+}
+
+.ripple:active {
+	transform: scale(0.98);
+}
+
+.ripple .circle {
+	position: absolute;
+	background-color: #fff;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	transform: translate(-50%, 50% scale(0));
+	animation: scale 0.5s ease-out;
+}
+
+@keyframes scale {
+	to {
+		transform: translate(-50%, -50%) scale(3);
+		opacity: 0;
+	}
+}

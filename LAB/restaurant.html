@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Food Recipe Website</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+				background-color: #f4f4f4;
+			}
+
+			header {
+				background-color: #333;
+				color: white;
+				padding: 1em;
+				text-align: center;
+			}
+
+			main {
+				max-width: 800px;
+				margin: 20px auto;
+				padding: 20px;
+				background-color: white;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			}
+
+			#recipes {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+				gap: 20px;
+			}
+
+			.recipe-card {
+				border: 1px solid #ddd;
+				border-radius: 5px;
+				overflow: hidden;
+				transition: transform 0.3s;
+				cursor: pointer;
+			}
+
+			.recipe-card:hover {
+				transform: scale(1.05);
+			}
+
+			.recipe-card img {
+				width: 100%;
+				height: 150px;
+				object-fit: cover;
+			}
+
+			.recipe-card-info {
+				padding: 10px;
+			}
+
+			h3 {
+				margin: 0;
+				font-size: 1.2em;
+			}
+
+			p {
+				margin: 0;
+				color: #666;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Food Recipe Website</h1>
+		</header>
+
+		<main>
+			<div id="recipes"></div>
+		</main>
+
+		<script>
+			const APP_ID = "bb42fbe3";
+			const APP_KEY = "73017421a26716715acfd78a5812c75f";
+			const API_URL = `https://api.edamam.com/search?app_id=${APP_ID}&app_key=${APP_KEY}&q=chicken`;
+
+			async function fetchRecipes() {
+				try {
+					const response = await fetch(API_URL);
+					const data = await response.json();
+					displayRecipes(data.hits);
+				} catch (error) {
+					console.error("Error fetching recipes:", error);
+				}
+			}
+
+			function displayRecipes(recipes) {
+				const recipesContainer = document.getElementById("recipes");
+				recipesContainer.innerHTML = "";
+
+				recipes.forEach((recipe) => {
+					const recipeCard = document.createElement("div");
+					recipeCard.className = "recipe-card";
+
+					const image = document.createElement("img");
+					image.src = recipe.recipe.image;
+					image.alt = recipe.recipe.label;
+
+					const recipeInfo = document.createElement("div");
+					recipeInfo.className = "recipe-card-info";
+
+					const recipeName = document.createElement("h3");
+					recipeName.textContent = recipe.recipe.label;
+
+					const recipeCalories = document.createElement("p");
+					recipeCalories.textContent = `Calories: ${Math.round(
+						recipe.recipe.calories
+					)}`;
+
+					const recipeIngredients = document.createElement("p");
+					recipeIngredients.textContent = `Ingredients: ${recipe.recipe.ingredientLines.join(
+						", "
+					)}`;
+
+					recipeInfo.appendChild(recipeName);
+					recipeInfo.appendChild(recipeCalories);
+					recipeInfo.appendChild(recipeIngredients);
+
+					recipeCard.appendChild(image);
+					recipeCard.appendChild(recipeInfo);
+
+					recipesContainer.appendChild(recipeCard);
+				});
+			}
+
+			fetchRecipes();
+		</script>
+	</body>
+</html>
